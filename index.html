@@ -5,12 +5,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/@algolia/algoliasearch-netlify-frontend@1/dist/algoliasearchNetlify.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@algolia/algoliasearch-netlify-frontend@1/dist/algoliasearchNetlify.css" />
 
     <!-- Bootstrap CSS 5.0.1 -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/css/style.css">
     <title>Crypto Currency | Prices</title>
@@ -23,9 +21,7 @@
             <a class="navbar-brand" href="/index.html">
                 <img src="/" height="50" width="" alt="">
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -38,8 +34,7 @@
                     </li>
                 </ul>
                 <form class="d-flex">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
+                    <input class="form-control me-2" id="myInput" type="search" placeholder="Search" onkeyup="myFunction()" aria-label="Search">
                 </form>
             </div>
         </div>
@@ -49,8 +44,7 @@
 
     <!--  CoinGecko logo -->
     <div class="text-center">
-        <img class="img img-responsive\" src="resources/images/CoinGeckoLogo.png" height="50" width="50" alt="">
-        Powered by
+        <img class="img img-responsive\" src="resources/images/CoinGeckoLogo.png" height="50" width="50" alt=""> Powered by
         <a href="https://www.coingecko.com/" target="_blank">CoinGecko
         </a>
     </div>
@@ -103,6 +97,30 @@
             </nav>
         </ul>
 
+        <script>
+            function myFunction() {
+                // Declare variables
+                var input, filter, table, tr, td, i, txtValue;
+                input = document.getElementById("myInput");
+                filter = input.value.toUpperCase();
+                table = document.getElementById("coinstable");
+                tr = table.getElementsByTagName("tr");
+
+                // Loop through all table rows, and hide those who don't match the search query
+                for (i = 0; i < tr.length; i++) {
+                    td = tr[i].getElementsByTagName("td")[1];
+                    if (td) {
+                        txtValue = td.textContent || td.innerText;
+                        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                            tr[i].style.display = "";
+                        } else {
+                            tr[i].style.display = "none";
+                        }
+                    }
+                }
+            }
+        </script>
+
         <!-- Coin Table -->
         <div class="card text-white" style="background-color: #131214;">
             <div class="card-header text-center">
@@ -111,8 +129,7 @@
                     <table id="coinstable" role="table">
                         <thead id="cointablehead" role="rowgroup">
                             <tr id="coinstablerow" role="row">
-                                <th role="columnheader" class="text-left" scope="col"><a href="#" class="sortable"
-                                        name="market_cap_rank">Rank
+                                <th role="columnheader" class="text-left" scope="col"><a href="#" class="sortable" name="market_cap_rank">Rank
                                 </th>
                                 <th role="columnheader" class="text-left" scope="col"><a href="#" class="sortable"
                                         name="name">Name
@@ -147,44 +164,42 @@
 
             <footer class="footer">
                 <p> &copy;2021 <a href="https://github.com/Virtualschematic" target="_blank">VirtualSchematics</a></p>
-                <br>
-                <div class="developers" style="color:gray">Site Developers:</div>
-                <ul>
-                    <li><a href="https://github.com/lukeponga-dev" target="_blank">Luke Ponga!</a></li>
-                    <li> <a href="#">Luke Hartley</a> </li>
-                </ul>
-                <i>Powered by<a href="https://www.coingecko.com/" target="_blank">CoinGecko </a></i>
-            </footer>
-        </div>
+                                    <br>
+                                    <div class="developers" style="color:gray">Site Developers:</div>
+                                    <ul>
+                                        <li><a href="https://github.com/lukeponga-dev" target="_blank">Luke Ponga!</a></li>
+                                        <li> <a href="#">Luke Hartley</a> </li>
+                                    </ul>
+                                    <i>Powered by<a href="https://www.coingecko.com/" target="_blank">CoinGecko </a></i>
+                                    </footer>
+                </div>
 
 
 
-        <!-- Bootstrap Bundle with Popper -->
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
-        </script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
-        </script>
-        <script type="text/javascript"
-            src="https://cdn.jsdelivr.net/npm/@algolia/algoliasearch-netlify-frontend@1/dist/algoliasearchNetlify.js">
-        </script>
-        <script type="text/javascript">
-            algoliasearchNetlify({
-                appId: '95MCXDNNUA',
-                apiKey: '5654435ccf80d7b87fef61ac446c4c0f',
-                siteId: '91935525-fd3c-4247-b0e4-767efb349f69',
-                branch: 'master',
-                selector: 'div#search',
-            });
-        </script>
+                <!-- Bootstrap Bundle with Popper -->
+                <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+                </script>
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
+                </script>
+                <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@algolia/algoliasearch-netlify-frontend@1/dist/algoliasearchNetlify.js">
+                </script>
+                <script type="text/javascript">
+                    algoliasearchNetlify({
+                        appId: '95MCXDNNUA',
+                        apiKey: '5654435ccf80d7b87fef61ac446c4c0f',
+                        siteId: '91935525-fd3c-4247-b0e4-767efb349f69',
+                        branch: 'master',
+                        selector: 'div#search',
+                    });
+                </script>
 
-        <!-- Custom JS -->
-        <!-- CoinGecko widgets -->
-        <script src="https://widgets.coingecko.com/coingecko-coin-price-chart-widget.js"></script>
-        <script src="https://widgets.coingecko.com/coingecko-coin-market-ticker-list-widget.js"></script>
-        <script src="https://widgets.coingecko.com/coingecko-coin-heatmap-widget.js"> </script>
-        <script src="/js/scripts.js"></script>
+                <!-- Custom JS -->
+                <!-- CoinGecko widgets -->
+                <script src="https://widgets.coingecko.com/coingecko-coin-price-chart-widget.js"></script>
+                <script src="https://widgets.coingecko.com/coingecko-coin-market-ticker-list-widget.js"></script>
+                <script src="https://widgets.coingecko.com/coingecko-coin-heatmap-widget.js">
+                </script>
+                <script src="/js/scripts.js"></script>
 </body>
 
 </html>
