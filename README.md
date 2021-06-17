@@ -1,4 +1,6 @@
 # CryptoCoins Price Stats
+[![Netlify Status](https://api.netlify.com/api/v1/badges/91935525-fd3c-4247-b0e4-767efb349f69/deploy-status)](https://app.netlify.com/sites/cryptocoinstats/deploys)
+
 Created using CoinGeckos API<br>
     **JavaScript Code to Fetch api data**
      
