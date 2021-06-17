@@ -1,0 +1,188 @@
+
+
+table { 
+    width: 100%; 
+    border-collapse: collapse; 
+  }
+  /* Zebra striping */
+  #coinstablerow tr:nth-of-type(odd) { 
+    background:darkmode; 
+  }
+  .sortable th { 
+    background: darkmode; 
+    font-weight: bold; 
+  }
+   td, th { 
+    padding: 6px; 
+    border: 1px solid #ccc; 
+    text-align: left; 
+  }
+
+  .footer ul li {
+list-style: none;
+display: inline-block;
+}
+
+.footer li a{
+        padding-left: 10px;
+        margin-left: 10px;
+        font-size: 11;
+}
+.foote a:hover{
+        transform: perspective(-9999px);
+        color: white;
+}
+.developers{
+    font-size: 13px;
+    margin-left: 35px;
+    font-weight: 700;   
+}
+
+
+
+
+/* HTML elements*/
+
+a:visited {
+    color: violet;
+    text-decoration: none;
+}
+
+a:link {
+    color: white;
+    text-decoration: none;
+}
+
+a:hover {
+    color: lightgrey;
+    text-decoration: underline;
+}
+
+a:active {
+    color: blue;
+    text-decoration: underline;
+}
+
+
+/* Class elements*/
+
+.boldText {
+    font-weight: bold;
+}
+
+
+/* Toggle Darkmode */
+
+.dark-mode {
+    background-color: rgb(26, 23, 23);
+    color: white;
+}
+
+.dark-mode .list-group-item {
+    background-color: rgb(26, 23, 23);
+    color: white;
+}
+
+.dark-mode #nAnchor {
+    background-color: rgb(26, 23, 23);
+    color: white;
+}
+
+.dark-mode #pageNumber {
+    background-color: rgb(26, 23, 23);
+    color: white;
+}
+
+.dark-mode #pAnchor {
+    background-color: rgb(26, 23, 23);
+    color: white;
+}
+/* ID elements*/
+
+#coinList  {
+    color: white;
+    background-color: rgb(26, 23, 23);}
+
+#coinTableBody {
+    color: white;
+    text-align: left;
+    font-size: 15px;
+}
+
+#globalTableBody {
+    color: #ffff;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: left;
+}
+
+#coinSpan,
+#exchangesSpan,
+#totalMarketCapSpan,
+#_24hVolSpan,#btcSpan,
+#ethSpan{
+    color: lightseagreen;
+    font-family: Arial, Helvetica, sans-serif;
+    display: inline;
+
+}
+/* 
+Max width before this PARTICULAR table gets nasty
+This query will take effect for any screen smaller than 760px
+and also iPads specifically.
+*/
+@media 
+only screen and (max-width: 760px),
+(min-device-width: 768px) and (max-device-width: 1024px)  {
+
+    #globalTableBody {
+    font-size: 11px;
+    }
+
+	/* Force table to not be like tables anymore */
+	#coinstable, #coinstablehead, #coinTableBody, .sortable,td.text-left, .content-row { 
+		display: block; 
+	}
+    /* Hide table headers (but not display: none;, for accessibility) */
+	thead tr{ 
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+	tr { border: none; margin-bottom: 20px;}
+	
+	td.text-left { 
+		/* Behave  like a "row" */
+		border: none;
+		border-bottom: 1px solid #eee; 
+		position: relative;
+		padding-left: 70%; 
+	}
+
+	td:before { 
+		/* Now like a table header */
+		position: absolute;
+		/* Top/left values mimic padding */
+		top: 6px;
+		left: 6px;
+		width: 45%; 
+		padding-right: 10px; 
+		white-space: nowrap;
+	}
+	
+	/*
+	Label the data
+	*/
+	td:nth-of-type(1):before { content: "Rank"; }
+	td:nth-of-type(2):before { content: "Name"; }
+	td:nth-of-type(3):before { content: "Price(NZD)"; }
+	td:nth-of-type(4):before { content: "Market Cap"; }
+	td:nth-of-type(5):before { content: "Volume (24h)"; }
+	td:nth-of-type(6):before { content: "Circulating Supply"; }
+	td:nth-of-type(7):before { content: "Price Change 24h"; }
+
+
+
+
+}
+
