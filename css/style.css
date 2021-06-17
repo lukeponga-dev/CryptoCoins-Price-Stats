@@ -159,12 +159,12 @@ only screen and (max-width: 760px),
 		padding-left: 70%; 
 	}
 
-	td:before { 
+	td.text-left:before { 
 		/* Now like a table header */
 		position: absolute;
 		/* Top/left values mimic padding */
 		top: 6px;
-		left: 6px;
+		left: 4px;
 		width: 45%; 
 		padding-right: 10px; 
 		white-space: nowrap;

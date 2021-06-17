@@ -10,7 +10,7 @@
         integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/css/style.css">
-    <title>Crypto Currency | Details</title>
+    <title>Crypto Currency | Coin</title>
 </head>
 
 <body>
@@ -18,7 +18,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #131214;">
         <div class="container-fluid">
             <a class="navbar-brand" href="/index.html">
-                <img src="/" height="50" width="" alt="">
+                Crypto
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -28,10 +28,10 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav nav-pills me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" href="/index.html">Home</a>
+                        <a class="nav-link " href="/index.html">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/coinDetails.html">Coin</a>
+                        <a class="nav-link active" aria-current="page" href="/coinDetails.html">Coins</a>
                     </li>
                 </ul>
                 <form class="d-flex">
@@ -41,6 +41,9 @@
             </div>
         </div>
     </nav>
+    <br>
+
+
     <!--  CoinGecko logo -->
     <div class="text-center">
         <img class="img img-responsive\" src="resources/images/CoinGeckoLogo.png" height="50" width="50" alt="">
@@ -48,42 +51,55 @@
         <a href="https://www.coingecko.com/" target="_blank">CoinGecko
         </a>
     </div>
-    <!-- Global Market Data -->
-    <table class="table table-borderless">
-        <h4 class="text-center">Market Data</h4>
-        <tbody id="globalTableBody">
-            <tr class="content-row">
-                <td><span class="boldText">Coins: </span>
-                    <span id="coinSpan"></span></td>
-                <td><span class="boldText">Exchanges: </span>
-                    <span id="exchangesSpan"></span></td>
-                <td><span class="boldText">Total Market Cap: </span><span id="totalMarketCapSpan"></span>
-                    <span id="totalMarketCapSpanPercent"></span></td>
-                <td><span class="boldText">24h Vol: </span><span id="_24hVolSpan"></span></td>
-                <td class="text-right"><span class="boldText">Dominance: </span><span id="btcSpan"></span>
-                    <span id="ethSpan"></span></td>
-            </tr>
-        </tbody>
-    </table>
+    <div class="container">
+        <!-- Global Market Data -->
 
-    <br>
-    <!-- Coin List -->
-    <ul class="list-group" id="coinList">
-    </ul>
-    <hr>
+        <div class="card text-white" style="background-color: #131214;">
+            <div class="card-header text-center">
+                Global Market Data
+            </div>
+            <div class="card-body">
+                <table id="globalTableBody" role="table">
+                    <tbody id="globalTableBody">
+                        <tr class="content-row">
+                            <td><span class="boldText">Coins: </span>
+                                <span id="coinSpan"></span>
+                            </td>
+                            <td><span class="boldText">Exchanges: </span>
+                                <span id="exchangesSpan"></span>
+                            </td>
+                            <td><span class="boldText">Total Market Cap: </span><span id="totalMarketCapSpan"></span>
+                                <span id="totalMarketCapSpanPercent"></span>
+                            </td>
+                            <td><span class="boldText">24h Vol: </span><span id="_24hVolSpan"></span></td>
+                            <td class="text-right"><span class="boldText">Dominance: </span><span id="btcSpan"></span>
+                                <span id="ethSpan"></span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
 
-    <!-- Page Footer -->
-    <footer class="footer">
-        <p> &copy;2021 <a href="https://github.com/Virtualschematic" target="_blank">VirtualSchematics</a></p>
+        </div>
+
         <br>
-        <div class="developers" style="color:gray">Site Developers:</div>
-        <ul>
-            <li><a href="https://github.com/lukeponga-dev" target="_blank">Luke Ponga!</a></li>
-            <li> <a href="#">Luke Hartley</a> </li>
+        <!-- Coin List -->
+        <ul class="list-group" id="coinList">
         </ul>
-        <i>Powered by<a href="https://www.coingecko.com/" target="_blank">CoinGecko </a></i>
-    </footer>
+        <hr>
 
+        <!-- Page Footer -->
+        <footer class="footer">
+            <p> &copy;2021 <a href="https://github.com/Virtualschematic" target="_blank">VirtualSchematics</a></p>
+            <br>
+            <div class="developers" style="color:gray">Site Developers:</div>
+            <ul>
+                <li><a href="https://github.com/lukeponga-dev" target="_blank">Luke Ponga!</a></li>
+                <li> <a href="#">Luke Hartley</a> </li>
+            </ul>
+            <i>Powered by<a href="https://www.coingecko.com/" target="_blank">CoinGecko </a></i>
+        </footer>
+    </div>
 
 
     <!-- Bootstrap Bundle with Popper -->
